@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="">
+
+    <h1>SalesOrder Database Application</h1>
+    <p>A perpetual SQL Server database program</p>
+
+
+    <h1 class="pt-3">Version01</h1>
+
+
+    <div>
+        <p class="border p-lg-2 ">
+            <a class="text-black   text-decoration-none" asp-area="" asp-controller="Product" asp-action="List">Manage Products</a>
+        </p>
+        <p class="border p-lg-2 ">
+            <a class="text-black   text-decoration-none" asp-area="" asp-controller="Category" asp-action="Index">Manage Categories</a>
+        </p>
+        <p class="border p-lg-2 ">
+            <a class="text-black   text-decoration-none" asp-area="" asp-controller="Vendor" asp-action="Index">Manage Vendors</a>
+        </p>
+        <p class="border p-lg-2 ">
+            <a class="text-black   text-decoration-none" asp-area="" asp-controller="Customer" asp-action="Index">Manage Customers</a>
+        </p>
+        <p class="border p-lg-2 ">
+            <a class="text-black   text-decoration-none" asp-area="" asp-controller="Employee" asp-action="Index">Manage Employees</a>
+        </p>
+        <p class="border p-lg-2 ">
+            <a class="text-black   text-decoration-none" asp-area="" asp-controller="Order" asp-action="Index">Manage Orders</a>
+        </p>
+    </div>
+
+
+
+    @* PRODUCTS SCREENSHOTS *@
+    <div class="my-5  text-center">
+        <h1>First Screen Shot Products Migration</h1>
+        <img src="~/assets/migration01-products_pic.png" class="img-fluid"/>
+    </div>
+
+    <div class="my-5  text-center">
+        <h1>First Screen Shot Update Database</h1>
+        <img src="~/assets/update-database_products_pic.png" class="img-fluid " />
+    </div>
+    @* PRODUCTS SCREENSHOTS *@
+
+
+    @* CATEGORY SCREENSHOTS *@
+    <div class="my-5  text-center">
+        <h1>Second Screen Shot Category Migration</h1>
+        <img src="~/assets/migration02-categories_pic.png" class="img-fluid " />
+    </div>
+
+
+    <div class="my-5  text-center">
+        <h1>Second Screen Shot Update Database</h1>
+        <img src="~/assets/update-database_categories_pic.png" class="img-fluid " />
+    </div>
+    @* CATEGORY SCREENSHOTS *@
+
+
+
+</div>

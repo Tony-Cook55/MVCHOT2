@@ -1,0 +1,27 @@
+﻿@*
+    Delete Product
+*@
+@{
+}
+
+@model Product
+@{
+    ViewBag.Title = $"{ViewBag.Action}";
+}
+
+
+
+<div class=" bg-danger    bg-opacity-50">
+    <h1 class="my-4">Confirm Deletion</h1>
+
+    <p class="my-4">Do You Really Want To Delete <span class="fw-bold">@Model.ProductName ?</span></p>
+
+
+    <form asp-action="Delete" method="post">
+        @* This Product id is being sent back to the controller *@
+        <input type="hidden" asp-for="ProductID" />
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Product" asp-action="List" class="btn btn-primary">Cancel</a>
+    </form>
+</div>

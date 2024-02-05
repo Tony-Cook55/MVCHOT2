@@ -1,0 +1,118 @@
+﻿@*
+    EDIT
+*@
+
+
+@model Product
+@{
+    ViewBag.Title = $"{ViewBag.Action}";
+}
+
+
+<h1>@ViewBag.Action</h1>
+
+
+
+<form asp-action="AddEdit" method="post">
+
+
+
+    @* PRODUCT NAME *@
+    <div class="mb-3">
+        <label asp-for="ProductName" class="form-label">Product Name</label>
+        <input asp-for="ProductName" class="form-control" />
+
+        <span class="text-danger" asp-validation-for="ProductName"></span> @* Error Message *@
+
+    </div>
+    @* PRODUCT NAME *@
+
+
+    @* SHORT DESCRIPTION *@
+    <div class="mb-3">
+        <label asp-for="ProductDescShort" class="form-label">Short Description</label>
+        <input asp-for="ProductDescShort" class="form-control" />
+
+        <span class="text-danger" asp-validation-for="ProductDescShort"></span> @* Error Message *@
+    </div>
+    @* SHORT DESCRIPTION *@
+
+
+
+    @* LONG DESCRIPTION *@
+    <div class="mb-3">
+        <label asp-for="ProductDescLong" class="form-label">Long Description</label>
+        <input asp-for="ProductDescLong" class="form-control" />
+
+        <span class="text-danger" asp-validation-for="ProductDescLong"></span> @* Error Message *@
+    </div>
+    @* LONG DESCRIPTION *@
+
+
+
+    @* IMAGE *@
+    <div class="mb-3">
+        <label asp-for="ProductImage" class="form-label">Image</label>
+        <input asp-for="ProductImage" class="form-control" type="text"    /> @* type="file" *@
+
+        <span class="text-danger" asp-validation-for="ProductImage"></span> @* Error Message *@
+    </div>
+    @* IMAGE *@
+
+
+
+    @* PRICE *@
+    <div class="mb-3">
+        <label asp-for="ProductPrice" class="form-label">Price</label>
+        <input asp-for="ProductPrice" class="form-control" />
+
+        <span class="text-danger" asp-validation-for="ProductPrice"></span> @* Error Message *@
+    </div>
+    @* PRICE *@
+
+
+
+    @* QUANTITY *@
+    <div class="mb-3">
+        <label asp-for="ProductQty" class="form-label">Quantity</label>
+        <input asp-for="ProductQty" class="form-control"  type="number"  min="1" max="1000"/>
+
+        <span class="text-danger" asp-validation-for="ProductQty"></span> @* Error Message *@
+    </div>
+    @* QUANTITY *@
+
+
+
+    @* CATEGORY *@
+    <div class="mb-3">
+        <label asp-for="CategoryID" class="form-label">Category</label>
+
+        <select asp-for="CategoryID" class="form-control">
+            <option value="">Select Category</option>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.CategoryID">@category.CategoryName</option>
+            }
+        </select>
+
+        <span class="text-danger" asp-validation-for="CategoryID"></span> @* Error Message *@
+
+    </div>
+    @* CATEGORY *@
+
+
+
+
+
+
+    <input type="hidden" asp-for="ProductID" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    <a asp-controller="Product" asp-action="List" class="btn btn-secondary">Cancel</a>
+
+
+
+
+
+</form>
